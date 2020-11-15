@@ -10,6 +10,40 @@
   </head>
 
   <body>
+    <header>
+      <header>
+        <div class="header-logo-menu">
+
+          <h1>sample_twitter</h1>
+
+      <ul class="header-menu">
+        <li>
+        <%= link_to("TOP", "/") %>
+        </li>
+        <li>投稿一覧</li>
+        <li>新規作成</li>
+
+      </ul>
+      </div>
+      </header>
+
+
+    </header>
     <%= yield %>
+
+    <div class="main users-new">
+      <div class="container">
+        <div class="form-heading">ログイン</div>
+        <div class="form users-form">
+          <div class="form-body">
+            <p>メールアドレス</p>
+            <input>
+            <p>パスワード</p>
+            <input>
+            <input type="submit" value="ログイン" type="password">
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
