@@ -7,6 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+
+
   </head>
 
   <body>
@@ -20,8 +24,9 @@
         <li>
         <%= link_to("TOP", "/") %>
         </li>
-        <li>投稿一覧</li>
-        <li>新規作成</li>
+        <li><%= link_to("投稿一覧", "/posts/index") %></li>
+        <li><%= link_to("新規作成", "/posts/new") %></li>
+        <li><%= link_to("ログイン", "login") %></li>
 
       </ul>
       </div>
@@ -31,19 +36,6 @@
     </header>
     <%= yield %>
 
-    <div class="main users-new">
-      <div class="container">
-        <div class="form-heading">ログイン</div>
-        <div class="form users-form">
-          <div class="form-body">
-            <p>メールアドレス</p>
-            <input>
-            <p>パスワード</p>
-            <input>
-            <input type="submit" value="ログイン" type="password">
-          </div>
-        </div>
-      </div>
-    </div>
+
   </body>
 </html>
