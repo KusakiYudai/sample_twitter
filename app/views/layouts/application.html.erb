@@ -8,34 +8,56 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
   </head>
 
   <body>
     <header>
-      <header>
         <div class="header-logo-menu">
+        <h1 style="padding: 20px;">sample_twitter</h1>
 
-          <h1>sample_twitter</h1>
-
-      <ul class="header-menu">
-        <li>
-        <%= link_to("TOP", "/") %>
-        </li>
-        <li><%= link_to("投稿一覧", "/posts/index") %></li>
-        <li><%= link_to("新規作成", "/posts/new") %></li>
-        <li><%= link_to("ログイン", "login") %></li>
-
-      </ul>
+        <ul class="header-menu">
+          <% if current_user %>
+          <li>
+            現在ログインしているユーザーのid:
+            <%= current_user.id %>
+          </li>
+          <li><%= link_to "TOP", root_path %></li>
+          <li><%= link_to "投稿一覧", posts_path %></li>
+          <li><%= link_to "新規投稿", new_post_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "TOP", root_path %></li>
+          <li><%= link_to "新規作成", users_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+        </ul>
       </div>
-      </header>
-
-
     </header>
-    <%= yield %>
 
+
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+
+    <div class="main">
+
+
+      </div>
+
+    <footer>
+      <div class="footer">
+      <div class="footer-logo">sample_twitter</div>
+      <div class="footer-list">
+        <ul>
+          <li>サービス説明</li>
+          <li>サイトご利用にあたって</li>
+          <li>お問い合わせ</li>
+        </ul>
+      </div>
+    </div>
+    </footer>
 
   </body>
 </html>

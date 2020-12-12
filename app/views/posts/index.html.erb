@@ -11,8 +11,23 @@
 
   <tbody>
     <% @posts.each do |post| %>
-    <%= post.content %>
+
       <tr>
+        <td><%= post.content %></td>
+        <td><% if Like.find_by(user_id: current_user.id, post_id: post.id) %>
+            <%= link_to(destroy_likes_path(post),{method: "post"})do%>
+          <i class="fas fa-heart unlike-btn"></i>
+          <%end%>
+            <% else %>
+            <%= link_to(create_likes_path(post),{method: "post"})do%>
+              <i class="fas fa-heart like-btn"></i>
+          <%end%>
+        <%end%>
+          <%=@likes_count%>
+      </td>
+
+
+
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

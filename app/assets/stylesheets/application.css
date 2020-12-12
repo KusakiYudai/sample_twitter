@@ -1,15 +1,87 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+*= require font-awesome
+
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.header-logo-menu{
+  height: 80px;
+}
+
+li{
+  list-style: none;
+}
+
+.header-menu li{
+  float: left;
+  padding: 33px 20px;
+}
+
+.wrapper {
+  margin: 50px 0;
+  /* display: inline-block; */
+}
+
+.header-logo-menu {
+  display: flex;
+}
+
+.main{
+  height: 450px;
+}
+
+
+/* like-btn */
+.like-btn{
+  color: #8899a6;
+}
+
+
+.unlike-btn{
+  color: #ff2581;
+}
+
+.footer{
+  height: 120px;
+  padding: 40px;
+}
+
+.footer-logo{
+  font-size: 32px;
+  float: left;
+}
+
+.footer-list{
+  float: right;
+}
+
+.footer-list li{
+  padding-bottom: 20px;
+}
+
+html{
+  text-align: center;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: cover;
+  background-image: url("/top.jpg");
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+}
+
+.top-main h2 {
+  padding-top: 170px;
+}
+
+.posts-show-item{
+  padding-top: 170px;
+}

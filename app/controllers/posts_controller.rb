@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy,]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
-
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find_by(id:params[:id])
+    @post = Post.find(params[:id])
+    @likes_count=Like.where(post_id: @post.id).count
   end
 
   # GET /posts/new
@@ -62,6 +62,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

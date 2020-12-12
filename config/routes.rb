@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "home#top"
-  post "posts/create" => "posts#create"
-  get "posts/new" => "posts#new"
-  get "login" => "users#login"
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+  post "logout" => "users#logout"
 
-  get "posts/:id" => "posts#show"
-
+  post "likes/:post_id/create", to: "likes#create", as: "create_likes"
+  post "likes/:post_id/destroy", to: "likes#destroy", as: "destroy_likes"
 end
