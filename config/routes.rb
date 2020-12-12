@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   post "likes/:post_id/create", to: "likes#create", as: "create_likes"
   post "likes/:post_id/destroy", to: "likes#destroy", as: "destroy_likes"
+  
 end
