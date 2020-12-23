@@ -12,11 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :本文 %>
+    <%= form.text_area :content, id: "js-count",rows: 10, cols: 100 %>
+
+    <div class="counter">
+          <span class="show-count">0</span>文字
+    </div>
+
+    <div class="field_img">
+        <%= form.label :画像%>
+        <%= form.file_field :img%>
+    </div>
+
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :投稿%>
   </div>
 <% end %>

@@ -74,7 +74,7 @@ html{
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
-  background-image: url("/top.jpg");
+  background-image: url("/twitter.jpg");
   font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
 }
 
@@ -84,4 +84,14 @@ html{
 
 .posts-show-item{
   padding-top: 170px;
+}
+
+.field_img{
+  padding: 30px;
+}
+
+.post_index{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
 }

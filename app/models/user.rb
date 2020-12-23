@@ -9,7 +9,7 @@ class User < ApplicationRecord
   #validates :desc, presence: true
   #has_many :posts, dependent: :destroy
 
-#validates :password, {presence: true}
-  
+  validates :password, presence: true
+  validates :password, length: { in: 6..8 }
 
 end

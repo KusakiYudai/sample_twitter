@@ -1,5 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+  </body>
+</html>
+
   <head>
     <title>SampleTwitter</title>
     <%= csrf_meta_tags %>
@@ -20,8 +32,8 @@
         <ul class="header-menu">
           <% if current_user %>
           <li>
-            現在ログインしているユーザーのid:
-            <%= current_user.id %>
+            現在ログインしているユーザー:
+            <%= current_user.nickname %>
           </li>
           <li><%= link_to "TOP", root_path %></li>
           <li><%= link_to "投稿一覧", posts_path %></li>
